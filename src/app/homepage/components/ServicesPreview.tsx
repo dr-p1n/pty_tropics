@@ -58,7 +58,7 @@ export default function ServicesPreview() {
         </div>
 
         {/* Bento Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 auto-rows-[200px]">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6 lg:auto-rows-[200px]">
           {services.map((service, index) => {
             const sizeClasses = {
               large: 'lg:col-span-2 lg:row-span-2',
@@ -69,7 +69,7 @@ export default function ServicesPreview() {
             return (
               <div
                 key={service.id}
-                className={`${sizeClasses[service.size]} bg-card border-2 border-primary p-8 flex flex-col justify-between group hover:shadow-2xl hover:border-accent transition-all duration-300 relative overflow-hidden`}
+                className={`${sizeClasses[service.size]} min-h-[200px] bg-card border-2 border-primary p-8 flex flex-col justify-between group hover:shadow-2xl hover:border-accent transition-all duration-300 relative overflow-hidden`}
               >
                 {/* Icon */}
                 <div className="w-14 h-14 bg-primary rounded-full flex items-center justify-center group-hover:scale-110 transition-transform mb-auto">

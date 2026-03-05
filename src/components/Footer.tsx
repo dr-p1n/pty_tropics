@@ -1,8 +1,12 @@
+'use client';
+
 import Link from 'next/link';
 import Icon from '@/components/ui/AppIcon';
+import { usePrivacy } from '@/contexts/PrivacyContext';
 
 export default function Footer() {
   const currentYear = 2026;
+  const { openModal } = usePrivacy();
 
   const linkGroups = [
     {
@@ -38,7 +42,7 @@ export default function Footer() {
     <footer className="bg-background border-t-2 border-primary">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-10 py-16">
         {/* Top Row: Link Groups */}
-        <div className="grid grid-cols-2 md:grid-cols-3 gap-12 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12 mb-12">
           {linkGroups.map((group) => (
             <div key={group.id} className="space-y-4">
               {group.links.map((link) => (
@@ -56,10 +60,10 @@ export default function Footer() {
 
         {/* Bottom Row: Copyright, Social, Legal */}
         <div className="flex flex-col md:flex-row justify-between items-center gap-6 pt-8 border-t border-primary/20">
-          <div className="flex items-center gap-2 text-xs text-muted-foreground">
+          <div className="flex flex-wrap items-center justify-center md:justify-start gap-2 text-xs text-muted-foreground text-center">
             <span>© {currentYear} PTY Tropics Advisors</span>
             <span className="hidden md:inline">·</span>
-            <span className="hidden md:inline">Panamá 🇵🇦 + El Mundo 🌍</span>
+            <span>Panamá 🇵🇦 + El Mundo 🌍</span>
           </div>
 
           {/* Social Icons */}
@@ -78,9 +82,12 @@ export default function Footer() {
 
           {/* Legal Links */}
           <div className="flex items-center gap-4 text-xs text-muted-foreground">
-            <Link href="#" className="hover:text-accent transition-colors">
-              Privacy
-            </Link>
+            <button
+              onClick={openModal}
+              className="hover:text-accent transition-colors underline-offset-2 hover:underline"
+            >
+              Privacy & Cookies
+            </button>
             <span>·</span>
             <Link href="#" className="hover:text-accent transition-colors">
               Terms

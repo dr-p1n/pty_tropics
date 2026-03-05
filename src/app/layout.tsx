@@ -3,6 +3,8 @@ import type { Metadata, Viewport } from 'next';
 import { Space_Grotesk } from 'next/font/google';
 import '@/styles/index.css';
 import { LanguageProvider } from '@/contexts/LanguageContext';
+import { PrivacyProvider } from '@/contexts/PrivacyContext';
+import CookieConsent from '@/components/CookieConsent';
 
 export const viewport: Viewport = {
   width: 'device-width',
@@ -10,8 +12,8 @@ export const viewport: Viewport = {
 };
 
 export const metadata: Metadata = {
-  title: 'Next.js with Tailwind CSS',
-  description: 'A boilerplate project with Next.js and Tailwind CSS',
+  title: 'PTY Tropics Advisors | Local Roots, Global Mind',
+  description: 'Offshore and corporate structures for those who build different. International law firm in Panama.',
   icons: {
     icon: [
       { url: '/favicon.ico', type: 'image/x-icon' }
@@ -34,9 +36,12 @@ export default function RootLayout({
     <html lang="en">
       <body className={`${spaceGrotesk.variable} antialiased`}>
         <LanguageProvider>
-          {children}
+          <PrivacyProvider>
+            {children}
+            <CookieConsent />
+          </PrivacyProvider>
         </LanguageProvider>
-</body>
+      </body>
     </html>
   );
 }

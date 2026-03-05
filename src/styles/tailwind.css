@@ -122,9 +122,14 @@
   
   /* Massive Typography */
   .text-massive {
-    font-size: clamp(3rem, 8vw, 6.25rem); /* 48px - 100px */
-    line-height: 0.85;
+    font-size: clamp(2.25rem, 8vw, 6.25rem); /* 36px → 100px */
+    line-height: 0.9;
     letter-spacing: -0.02em;
+  }
+  @media (min-width: 640px) {
+    .text-massive {
+      line-height: 0.85;
+    }
   }
   
   /* Uppercase Micro Labels */
