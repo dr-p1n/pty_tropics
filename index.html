@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FUTGOLD — Cancha Sintética · Panama City</title>
+  <meta name="description" content="Reserva tu cancha sintética en Panama City. Sin cuentas, sin complicaciones.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <!-- NAV -->
+  <nav class="nav">
+    <a href="#" class="nav-logo">
+      <img src="public/logo.png" alt="FUTGOLD" height="40">
+    </a>
+    <a href="#reservar" class="btn btn-gold">RESERVAR</a>
+  </nav>
+
+  <!-- HERO -->
+  <section class="hero">
+    <p class="eyebrow">CANCHA SINTÉTICA · PANAMA CITY</p>
+    <h1>Tu próximo partido empieza aquí.</h1>
+    <p class="subline">Reserva tu horario en segundos. Sin cuentas, sin complicaciones.</p>
+  </section>
+
+  <!-- STATS -->
+  <section class="stats">
+    <div class="card stat-card">
+      <span class="stat-number">16</span>
+      <span class="stat-label">HORARIOS/DÍA</span>
+    </div>
+    <div class="card stat-card">
+      <span class="stat-number">7</span>
+      <span class="stat-label">DÍAS/SEMANA</span>
+    </div>
+    <div class="card stat-card">
+      <span class="stat-number">1H</span>
+      <span class="stat-label">MÍNIMO</span>
+    </div>
+  </section>
+
+  <!-- SCHEDULE GRID -->
+  <section class="schedule" id="horarios">
+    <div class="schedule-header">
+      <button class="week-nav" id="prevWeek" aria-label="Semana anterior">←</button>
+      <h2 class="schedule-title" id="weekLabel"></h2>
+      <button class="week-nav" id="nextWeek" aria-label="Semana siguiente">→</button>
+    </div>
+    <div class="schedule-grid-wrap">
+      <div class="schedule-grid" id="scheduleGrid"></div>
+    </div>
+  </section>
+
+  <!-- BOOKING FORM -->
+  <section class="booking" id="reservar">
+    <div class="card booking-card">
+      <h2>Reserva tu horario</h2>
+      <form id="bookingForm" novalidate>
+        <div class="field">
+          <label for="name">Nombre</label>
+          <input type="text" id="name" name="name" required autocomplete="name">
+          <span class="field-error" id="nameError"></span>
+        </div>
+        <div class="field">
+          <label for="phone">WhatsApp</label>
+          <input type="tel" id="phone" name="phone" required placeholder="6xxx-xxxx" autocomplete="tel">
+          <span class="field-error" id="phoneError"></span>
+        </div>
+        <div class="field-row">
+          <div class="field">
+            <label for="date">Fecha</label>
+            <input type="date" id="date" name="date" required>
+            <span class="field-error" id="dateError"></span>
+          </div>
+          <div class="field">
+            <label for="slot">Hora</label>
+            <select id="slot" name="slot" required>
+              <option value="">—</option>
+              <option value="06:00">06:00</option>
+              <option value="07:00">07:00</option>
+              <option value="08:00">08:00</option>
+              <option value="09:00">09:00</option>
+              <option value="10:00">10:00</option>
+              <option value="11:00">11:00</option>
+              <option value="12:00">12:00</option>
+              <option value="13:00">13:00</option>
+              <option value="14:00">14:00</option>
+              <option value="15:00">15:00</option>
+              <option value="16:00">16:00</option>
+              <option value="17:00">17:00</option>
+              <option value="18:00">18:00</option>
+              <option value="19:00">19:00</option>
+              <option value="20:00">20:00</option>
+              <option value="21:00">21:00</option>
+            </select>
+            <span class="field-error" id="slotError"></span>
+          </div>
+        </div>
+        <div class="field">
+          <label>Duración</label>
+          <div class="pills" id="durationPills">
+            <button type="button" class="pill active" data-dur="1">1H</button>
+            <button type="button" class="pill" data-dur="1.5">1H 30M</button>
+            <button type="button" class="pill" data-dur="2">2H</button>
+            <button type="button" class="pill" data-dur="2.5">2H 30M</button>
+            <button type="button" class="pill" data-dur="3">3H</button>
+            <button type="button" class="pill" data-dur="custom">+ PERSONALIZADO</button>
+          </div>
+          <div class="custom-dur hidden" id="customDur">
+            <input type="number" id="customHours" min="1" max="8" step="0.5" value="1" aria-label="Horas personalizadas">
+            <span class="custom-dur-label">horas</span>
+          </div>
+          <input type="hidden" id="duration" name="duration" value="1">
+          <span class="field-error" id="durationError"></span>
+        </div>
+        <div class="field consent-field">
+          <label class="checkbox-label">
+            <input type="checkbox" id="consent" name="consent" required>
+            <span>Autorizo el tratamiento de mis datos personales conforme a la <strong>Ley 81 de Protección de Datos de Panamá</strong>.</span>
+          </label>
+          <span class="field-error" id="consentError"></span>
+        </div>
+        <button type="submit" class="btn btn-gold btn-full" id="submitBtn">CONFIRMAR RESERVA</button>
+      </form>
+      <div class="booking-success hidden" id="bookingSuccess">
+        <p class="success-icon">✓</p>
+        <p class="success-msg">¡Reserva confirmada!</p>
+        <p class="success-id" id="confirmationId"></p>
+        <a class="btn btn-gold btn-full" id="whatsappLink" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- LEAGUES & EVENTS -->
+  <section class="events" id="eventos">
+    <h2>LIGAS Y EVENTOS</h2>
+    <div class="events-list" id="eventsList">
+      <p class="events-empty">No hay eventos programados este mes.</p>
+    </div>
+  </section>
+
+  <!-- AD ZONE -->
+  <section class="ad-zone">
+    <!-- AD ZONE: replace with AdSense tag -->
+    <span>ESPACIO PUBLICITARIO DISPONIBLE · contacto@futgold.com</span>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="footer">
+    <div class="footer-inner">
+      <img src="public/logo.png" alt="FUTGOLD" height="32" class="footer-logo">
+      <a href="https://wa.me/50762940094" class="footer-wa" target="_blank" rel="noopener">WhatsApp: 6294-0094</a>
+    </div>
+    <p class="footer-legal">Tus datos personales son tratados conforme a la Ley 81 de 26 de marzo de 2019 sobre Protección de Datos Personales de Panamá. Solo los usamos para gestionar tu reserva.</p>
+    <p class="footer-copy">FUTGOLD © 2025</p>
+  </footer>
+
+  <script src="app.js"></script>
+</body>
+</html>

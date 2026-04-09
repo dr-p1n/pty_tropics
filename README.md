@@ -1,91 +1,95 @@
-# Next.js
+# FUTGOLD — Cancha Sintética · Panama City
 
-A modern Next.js 15 application built with TypeScript and Tailwind CSS.
+Booking website for FUTGOLD synthetic soccer field. Static HTML/CSS/JS on Cloudflare Pages with Google Sheets as the backend.
 
-## 🚀 Features
+## Stack
 
-- **Next.js 15** - Latest version with improved performance and features
-- **React 19** - Latest React version with enhanced capabilities
-- **Tailwind CSS** - Utility-first CSS framework for rapid UI development
+- **Frontend:** HTML + CSS + vanilla JS (no framework)
+- **API:** Cloudflare Pages Functions (`functions/api/`)
+- **Database:** Google Sheets
+- **Deploy:** GitHub → Cloudflare Pages (auto on push to `main`)
 
-## 🛠️ Installation
+## Google Sheets Setup
 
-1. Install dependencies:
-  ```bash
-  npm install
-  # or
-  yarn install
-  ```
+1. Create a Google Sheet with two tabs:
 
-2. Start the development server:
-  ```bash
-  npm run dev
-  # or
-  yarn dev
-  ```
-3. Open [http://localhost:4028](http://localhost:4028) with your browser to see the result.
+   **Tab: `Reservas`** — Row 1 headers:
+   | Timestamp | Nombre | WhatsApp | Fecha | Hora | Duración | Estado | ConfirmationID |
+   |-----------|--------|----------|-------|------|----------|--------|----------------|
 
-## 📁 Project Structure
+   **Tab: `Eventos`** — Row 1 headers:
+   | Fecha | Nombre | HoraInicio | HoraFin | Notas | Tipo |
+   |-------|--------|------------|---------|-------|------|
 
-```
-nextjs/
-├── public/             # Static assets
-├── src/
-│   ├── app/            # App router components
-│   │   ├── layout.tsx  # Root layout component
-│   │   └── page.tsx    # Main page component
-│   ├── components/     # Reusable UI components
-│   ├── styles/         # Global styles and Tailwind configuration
-├── next.config.mjs     # Next.js configuration
-├── package.json        # Project dependencies and scripts
-├── postcss.config.js   # PostCSS configuration
-└── tailwind.config.js  # Tailwind CSS configuration
+   - `Tipo` values: `liga`, `torneo`, `privado`
+
+2. Go to [Google Cloud Console](https://console.cloud.google.com/):
+   - Create a project (or use an existing one)
+   - Enable **Google Sheets API**
+   - Create an **API key** (restrict to Sheets API)
+
+3. Make the Google Sheet **publicly readable** (Share → Anyone with the link → Viewer)
+
+> **Note:** The API key approach supports reading and appending rows. For production with high traffic, consider migrating to a Service Account with OAuth.
+
+## Environment Variables
+
+Set these in Cloudflare Pages → Settings → Environment variables:
 
 ```
+GOOGLE_SHEETS_API_KEY=your-api-key
+GOOGLE_SHEETS_ID=your-sheet-id
+```
 
-## 🧩 Page Editing
+The Sheet ID is the long string in the Google Sheets URL:
+`https://docs.google.com/spreadsheets/d/{SHEET_ID}/edit`
 
-You can start editing the page by modifying `src/app/page.tsx`. The page auto-updates as you edit the file.
+## Local Development
 
-## 🎨 Styling
+Serve the static files locally:
 
-This project uses Tailwind CSS for styling with the following features:
-- Utility-first approach for rapid development
-- Custom theme configuration
-- Responsive design utilities
-- PostCSS and Autoprefixer integration
+```bash
+npx wrangler pages dev . --port 8788
+```
 
-## 📦 Available Scripts
+This runs both the static site and the Pages Functions locally.
 
-- `npm run dev` - Start development server on port 4028
-- `npm run build` - Build the application for production
-- `npm run start` - Start the development server
-- `npm run serve` - Start the production server
-- `npm run lint` - Run ESLint to check code quality
-- `npm run lint:fix` - Fix ESLint issues automatically
-- `npm run format` - Format code with Prettier
+## Deploy to Cloudflare Pages
 
-## 📱 Deployment
+1. Connect the GitHub repo (`dr-p1n/pty_tropics`) to Cloudflare Pages
+2. Build settings:
+   - **Build command:** (leave empty — no build step)
+   - **Build output directory:** `/` (root)
+3. Add environment variables (`GOOGLE_SHEETS_API_KEY`, `GOOGLE_SHEETS_ID`)
+4. Push to `main` → auto-deploys
 
-Build the application for production:
+## API Endpoints
 
-  ```bash
-  npm run build
-  ```
+| Method | Path | Description |
+|--------|------|-------------|
+| GET | `/api/slots?week=YYYY-MM-DD` | Returns booked slots for the week |
+| POST | `/api/booking` | Creates a new booking |
+| GET | `/api/events` | Returns upcoming events |
 
-## 📚 Learn More
+### POST /api/booking body
 
-To learn more about Next.js, take a look at the following resources:
+```json
+{
+  "name": "Juan",
+  "phone": "6294-0094",
+  "date": "2025-04-12",
+  "slot": "08:00",
+  "duration": 1,
+  "consent": true
+}
+```
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial
+## Adding Events
 
-You can check out the [Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+Add rows directly in the Google Sheet `Eventos` tab. They'll appear on the site automatically.
 
-## 🙏 Acknowledgments
+## Ley 81 Compliance
 
-- Built with [Rocket.new](https://rocket.new)
-- Powered by Next.js and React
-- Styled with Tailwind CSS
-
-Built with ❤️ on Rocket.new
+- Consent checkbox required before booking
+- Privacy notice in footer
+- Data used only for booking management
