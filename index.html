@@ -3,232 +3,401 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>FUTGOLD — Cancha Sintética · Panamá Oeste, La Chorrera</title>
-  <meta name="description" content="Reserva tu cancha sintética en Panamá Oeste, La Chorrera. Sin cuentas, sin complicaciones.">
+  <title>PHYSICAL — Agencia de Talentos · Panamá</title>
+  <meta name="description" content="Talento panameño. Nivel internacional. Agencia de modelos y talentos en Panamá.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Italiana&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+  <!-- CURSOR FOLLOWER -->
+  <div id="cursor-follower" aria-hidden="true">
+    <img src="" alt="">
+  </div>
+
   <!-- NAV -->
-  <nav class="nav">
-    <a href="#" class="nav-logo">
-      <img src="public/logo.png" alt="FUTGOLD" height="40">
-    </a>
-    <div class="nav-links">
-      <a href="#horarios" class="nav-link">Horarios</a>
-      <a href="#eventos" class="nav-link">Ligas</a>
-      <a href="#reservar" class="btn btn-gold">RESERVAR</a>
+  <nav id="nav">
+    <a href="/" class="nav__logo mono" id="nav-logo">PHYSICAL</a>
+    <div class="nav__links" id="nav-links">
+      <a href="#index">TALENT</a>
+      <a href="#casting">CASTING</a>
+      <a href="#archives">ARCHIVES</a>
+      <a href="#contact">CONTACT</a>
     </div>
   </nav>
 
-  <!-- HERO -->
-  <section class="hero" style="background-image: url('https://images.unsplash.com/photo-1431324155629-1a6deb1dec8d?w=1600&q=80&auto=format');">
-    <div class="hero-overlay"></div>
-    <div class="hero-ghost" aria-hidden="true">BIRRIA</div>
-    <div class="hero-content">
-      <div class="hero-text">
-        <p class="eyebrow">CANCHA SINTÉTICA<br>PANAMÁ OESTE, LA CHORRERA</p>
-        <h1>Tu próxima<br><span class="gold-text">birria</span><br>empieza aquí.</h1>
-        <div class="hero-rule"></div>
-        <p class="subline">Arma tu partido en segundos.<br>Sin cuentas. Sin complicaciones.</p>
-        <a href="#reservar" class="btn btn-gold btn-hero">RESERVAR</a>
-      </div>
+  <!-- ═══════════════════════════════════════
+       HERO
+  ═══════════════════════════════════════ -->
+  <section id="hero">
+    <div class="hero__media">
+      <img
+        class="hero__still"
+        src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=1800&q=85&auto=format&fit=crop"
+        alt=""
+        aria-hidden="true"
+      >
+      <video class="hero__video" autoplay muted loop playsinline>
+        <!-- <source src="" type="video/mp4"> -->
+      </video>
+      <div class="hero__overlay"></div>
     </div>
-    <div class="hero-meta" aria-hidden="true">
-      <span>23.8°N</span>
-      <span>FG—2025</span>
-      <span>LA CHORRERA, PA</span>
+    <div class="hero__masthead">
+      <p class="hero__eyebrow mono">Panamá — Est. 2020</p>
+      <h1 class="hero__wordmark" id="hero-wordmark">PHYSICAL</h1>
+      <p class="hero__tagline editorial-italic">Talento panameño.<br>Nivel internacional.</p>
+    </div>
+    <div class="hero__scroll-hint mono" aria-hidden="true">SCROLL</div>
+  </section>
+
+  <!-- ═══════════════════════════════════════
+       VISUAL INDEX
+  ═══════════════════════════════════════ -->
+  <section id="index">
+    <div class="grid-8">
+      <header class="col-2-7">
+        <p class="section-label reveal">INDEX — 2025</p>
+      </header>
+      <ol class="vi-list col-2-7">
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=420&q=70&auto=format">
+          <span class="vi-num mono">001</span>
+          <span class="vi-name editorial-italic">Sofia Arango</span>
+          <span class="vi-meta mono">Comercial · Pasarela <span class="vi-arrow">→</span></span>
+        </li>
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=420&q=70&auto=format">
+          <span class="vi-num mono">002</span>
+          <span class="vi-name editorial-italic">Valentina Cruz</span>
+          <span class="vi-meta mono">Editorial · Campaña <span class="vi-arrow">→</span></span>
+        </li>
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=420&q=70&auto=format">
+          <span class="vi-num mono">003</span>
+          <span class="vi-name editorial-italic">Daniela Vega</span>
+          <span class="vi-meta mono">Lujo · Comercial <span class="vi-arrow">→</span></span>
+        </li>
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1488716820095-cbe80883c496?w=420&q=70&auto=format">
+          <span class="vi-num mono">004</span>
+          <span class="vi-name editorial-italic">Camila Ríos</span>
+          <span class="vi-meta mono">Pasarela · Campaña <span class="vi-arrow">→</span></span>
+        </li>
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1496440737103-cd596325d314?w=420&q=70&auto=format">
+          <span class="vi-num mono">005</span>
+          <span class="vi-name editorial-italic">Isabela Torres</span>
+          <span class="vi-meta mono">Deportivo · Editorial <span class="vi-arrow">→</span></span>
+        </li>
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?w=420&q=70&auto=format">
+          <span class="vi-num mono">006</span>
+          <span class="vi-name editorial-italic">Alejandra Mora</span>
+          <span class="vi-meta mono">Alta Moda · Lujo <span class="vi-arrow">→</span></span>
+        </li>
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=420&q=70&auto=format">
+          <span class="vi-num mono">007</span>
+          <span class="vi-name editorial-italic">Natalia Blanco</span>
+          <span class="vi-meta mono">Comercial · Pasarela <span class="vi-arrow">→</span></span>
+        </li>
+        <li class="vi-item" data-thumb="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=420&q=70&auto=format">
+          <span class="vi-num mono">008</span>
+          <span class="vi-name editorial-italic">Mariana Flores</span>
+          <span class="vi-meta mono">Campaña · Editorial <span class="vi-arrow">→</span></span>
+        </li>
+      </ol>
     </div>
   </section>
 
-  <!-- STATS -->
-  <section class="stats">
-    <div class="stat-card">
-      <span class="stat-number">16</span>
-      <span class="stat-label">HORARIOS/DÍA</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-number">7</span>
-      <span class="stat-label">DÍAS/SEMANA</span>
-    </div>
-    <div class="stat-card">
-      <span class="stat-number">1H</span>
-      <span class="stat-label">MÍNIMO</span>
+  <!-- ═══════════════════════════════════════
+       OVERLAPPING PARALLAX
+  ═══════════════════════════════════════ -->
+  <section id="overlapping">
+    <div class="overlap-section__bg-text editorial-italic" aria-hidden="true">Talento</div>
+    <div class="overlap-section__content">
+
+      <div class="overlap-section__portrait reveal">
+        <img
+          src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=900&q=80&auto=format&fit=crop"
+          alt="PHYSICAL talent"
+        >
+      </div>
+
+      <div class="overlap-section__copy">
+        <p class="section-label reveal">REPRESENTACIÓN</p>
+        <h2 class="editorial-italic reveal">Precisión<br>en cada<br>casting.</h2>
+        <p class="reveal">
+          Conectamos el talento panameño con las marcas más exigentes
+          del mercado latinoamericano e internacional. Cada proyecto,
+          una historia.
+        </p>
+      </div>
+
     </div>
   </section>
 
-  <!-- FEATURES -->
-  <section class="features">
-    <h2 class="section-title">¿POR QUÉ <span class="gold-text">FUTGOLD</span>?</h2>
-    <div class="features-grid">
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><rect x="2" y="4" width="20" height="16" rx="1"/><line x1="12" y1="4" x2="12" y2="20"/><circle cx="12" cy="12" r="3"/><line x1="2" y1="8" x2="6" y2="8"/><line x1="6" y1="8" x2="6" y2="16"/><line x1="2" y1="16" x2="6" y2="16"/><line x1="18" y1="8" x2="22" y2="8"/><line x1="18" y1="8" x2="18" y2="16"/><line x1="18" y1="16" x2="22" y2="16"/></svg>
+  <!-- ═══════════════════════════════════════
+       CASTING DECK
+  ═══════════════════════════════════════ -->
+  <section id="casting">
+    <div class="grid-8">
+
+      <div class="casting-header col-2-7">
+        <h2 class="reveal">Casting Deck</h2>
+        <div class="casting-controls">
+          <button class="casting-filter-btn active mono">Todos</button>
+          <button class="casting-filter-btn mono">Comercial</button>
+          <button class="casting-filter-btn mono">Editorial</button>
+          <button class="casting-filter-btn mono">Pasarela</button>
         </div>
-        <h3>Cancha Profesional</h3>
-        <p>Césped sintético de última generación con iluminación LED nocturna.</p>
       </div>
-      <div class="feature-card">
-        <div class="feature-icon icon-gold">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg>
+
+      <div class="casting-grid col-2-7">
+
+        <div class="talent-card reveal" data-id="PHY-001">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=600&q=80&auto=format&fit=crop" alt="Sofia Arango" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">175 cm</span>
+              <span class="mono">86–60–88</span>
+              <span class="mono">PHY-001</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Sofia Arango</p>
+          <p class="talent-card__cat mono">Comercial · Pasarela</p>
         </div>
-        <h3>Reserva Instantánea</h3>
-        <p>Sin cuentas, sin llamadas. Confirma tu cancha en segundos.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+
+        <div class="talent-card reveal" data-id="PHY-002">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=600&q=80&auto=format&fit=crop" alt="Valentina Cruz" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">178 cm</span>
+              <span class="mono">84–61–87</span>
+              <span class="mono">PHY-002</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Valentina Cruz</p>
+          <p class="talent-card__cat mono">Editorial · Campaña</p>
         </div>
-        <h3>Ligas y Torneos</h3>
-        <p>Únete a la comunidad. Competencias semanales para todos los niveles.</p>
-      </div>
-      <div class="feature-card">
-        <div class="feature-icon icon-gold">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="28" height="28"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+
+        <div class="talent-card reveal" data-id="PHY-003">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80&auto=format&fit=crop" alt="Daniela Vega" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">172 cm</span>
+              <span class="mono">85–59–86</span>
+              <span class="mono">PHY-003</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Daniela Vega</p>
+          <p class="talent-card__cat mono">Lujo · Comercial</p>
         </div>
-        <h3>Confirma por WhatsApp</h3>
-        <p>Recibe tu confirmación directo al celular. Rápido y personal.</p>
+
+        <div class="talent-card reveal" data-id="PHY-004">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1488716820095-cbe80883c496?w=600&q=80&auto=format&fit=crop" alt="Camila Ríos" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">176 cm</span>
+              <span class="mono">87–62–90</span>
+              <span class="mono">PHY-004</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Camila Ríos</p>
+          <p class="talent-card__cat mono">Pasarela · Campaña</p>
+        </div>
+
+        <div class="talent-card reveal" data-id="PHY-005">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1496440737103-cd596325d314?w=600&q=80&auto=format&fit=crop" alt="Isabela Torres" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">173 cm</span>
+              <span class="mono">84–60–87</span>
+              <span class="mono">PHY-005</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Isabela Torres</p>
+          <p class="talent-card__cat mono">Deportivo · Editorial</p>
+        </div>
+
+        <div class="talent-card reveal" data-id="PHY-006">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?w=600&q=80&auto=format&fit=crop" alt="Alejandra Mora" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">180 cm</span>
+              <span class="mono">83–59–85</span>
+              <span class="mono">PHY-006</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Alejandra Mora</p>
+          <p class="talent-card__cat mono">Alta Moda · Lujo</p>
+        </div>
+
+        <div class="talent-card reveal" data-id="PHY-007">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=600&q=80&auto=format&fit=crop" alt="Natalia Blanco" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">174 cm</span>
+              <span class="mono">86–61–88</span>
+              <span class="mono">PHY-007</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Natalia Blanco</p>
+          <p class="talent-card__cat mono">Comercial · Pasarela</p>
+        </div>
+
+        <div class="talent-card reveal" data-id="PHY-008">
+          <div class="talent-card__img-wrap">
+            <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=600&q=80&auto=format&fit=crop" alt="Mariana Flores" loading="lazy">
+            <div class="talent-card__meta">
+              <span class="mono">171 cm</span>
+              <span class="mono">85–60–87</span>
+              <span class="mono">PHY-008</span>
+            </div>
+            <div class="talent-card__select-mark">✓</div>
+          </div>
+          <p class="talent-card__name mono">Mariana Flores</p>
+          <p class="talent-card__cat mono">Campaña · Editorial</p>
+        </div>
+
       </div>
     </div>
   </section>
 
-  <!-- DIVIDER IMAGE -->
-  <div class="section-image">
-    <img src="https://images.unsplash.com/photo-1553778263-73a83bab9b0c?w=1600&q=75&auto=format" alt="Partido de fútbol">
-    <div class="section-image-overlay"></div>
+  <!-- GLASSMORPHISM CASTING BAR -->
+  <div id="casting-bar" role="status" aria-live="polite">
+    <span class="casting-bar__count mono"><strong>0</strong> seleccionadas</span>
+    <div class="casting-bar__divider"></div>
+    <button class="casting-bar__btn mono" id="btn-clear">Limpiar</button>
+    <div class="casting-bar__divider"></div>
+    <button class="casting-bar__btn mono" id="btn-share">Compartir link</button>
+    <button class="casting-bar__btn casting-bar__btn--primary mono" id="btn-pdf">Exportar PDF</button>
   </div>
 
-  <!-- SCHEDULE GRID -->
-  <section class="schedule" id="horarios">
-    <h2 class="section-title"><svg class="icon-field" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><rect x="3" y="4" width="18" height="18" rx="2" ry="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg> HORARIOS DISPONIBLES</h2>
-    <div class="schedule-header">
-      <button class="week-nav" id="prevWeek" aria-label="Semana anterior">←</button>
-      <h3 class="schedule-title" id="weekLabel"></h3>
-      <button class="week-nav" id="nextWeek" aria-label="Semana siguiente">→</button>
+  <!-- ═══════════════════════════════════════
+       ARCHIVES FILMSTRIP
+  ═══════════════════════════════════════ -->
+  <section id="archives">
+    <div class="archives-header">
+      <div class="grid-col">
+        <p class="section-label reveal">ARCHIVES</p>
+        <h2 class="reveal">Panama Fashion Week · SS25</h2>
+      </div>
+      <p class="mono reveal" style="padding-right: calc(var(--gap) + 100%/8); color: var(--fg-dim); font-size: 0.6rem; letter-spacing: 0.12em;">
+        Arrastra para explorar
+      </p>
     </div>
-    <div class="schedule-grid-wrap">
-      <div class="schedule-grid" id="scheduleGrid"></div>
-    </div>
-  </section>
+    <div class="filmstrip-viewport">
+      <div class="filmstrip-track">
 
-  <!-- BOOKING FORM -->
-  <section class="booking" id="reservar">
-    <div class="booking-card">
-      <h2>RESERVA TU CANCHA</h2>
-      <form id="bookingForm" novalidate>
-        <div class="field">
-          <label for="name">Nombre</label>
-          <input type="text" id="name" name="name" required autocomplete="name">
-          <span class="field-error" id="nameError"></span>
-        </div>
-        <div class="field">
-          <label for="phone">WhatsApp <span class="field-hint">— aquí recibes tu confirmación</span></label>
-          <input type="tel" id="phone" name="phone" required placeholder="6xxx-xxxx" autocomplete="tel">
-          <span class="field-error" id="phoneError"></span>
-        </div>
-        <div class="field-row">
-          <div class="field">
-            <label for="date">Fecha</label>
-            <input type="date" id="date" name="date" required>
-            <span class="field-error" id="dateError"></span>
-          </div>
-          <div class="field">
-            <label for="slot">Hora</label>
-            <select id="slot" name="slot" required>
-              <option value="">—</option>
-              <option value="06:00">06:00</option>
-              <option value="07:00">07:00</option>
-              <option value="08:00">08:00</option>
-              <option value="09:00">09:00</option>
-              <option value="10:00">10:00</option>
-              <option value="11:00">11:00</option>
-              <option value="12:00">12:00</option>
-              <option value="13:00">13:00</option>
-              <option value="14:00">14:00</option>
-              <option value="15:00">15:00</option>
-              <option value="16:00">16:00</option>
-              <option value="17:00">17:00</option>
-              <option value="18:00">18:00</option>
-              <option value="19:00">19:00</option>
-              <option value="20:00">20:00</option>
-              <option value="21:00">21:00</option>
-            </select>
-            <span class="field-error" id="slotError"></span>
-          </div>
-        </div>
-        <div class="field">
-          <label>Duración</label>
-          <div class="pills" id="durationPills">
-            <button type="button" class="pill active" data-dur="1">1H</button>
-            <button type="button" class="pill" data-dur="1.5">1H 30M</button>
-            <button type="button" class="pill" data-dur="2">2H</button>
-            <button type="button" class="pill" data-dur="2.5">2H 30M</button>
-            <button type="button" class="pill" data-dur="3">3H</button>
-            <button type="button" class="pill" data-dur="custom">+ PERSONALIZADO</button>
-          </div>
-          <div class="custom-dur hidden" id="customDur">
-            <input type="number" id="customHours" min="1" max="8" step="0.5" value="1" aria-label="Horas personalizadas">
-            <span class="custom-dur-label">horas</span>
-          </div>
-          <input type="hidden" id="duration" name="duration" value="1">
-          <span class="field-error" id="durationError"></span>
-        </div>
-        <div class="field consent-field">
-          <label class="checkbox-label">
-            <input type="checkbox" id="consent" name="consent" required>
-            <span>Autorizo el tratamiento de mis datos personales conforme a la <strong>Ley 81 de Protección de Datos de Panamá</strong>.</span>
-          </label>
-          <span class="field-error" id="consentError"></span>
-        </div>
-        <button type="submit" class="btn btn-submit btn-full" id="submitBtn">CONFIRMAR RESERVA</button>
-      </form>
-      <div class="booking-success hidden" id="bookingSuccess">
-        <div class="success-icon">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="40" height="40"><circle cx="12" cy="12" r="10"/><path d="M9 12l2 2 4-4"/></svg>
-        </div>
-        <p class="success-msg">¡Reserva confirmada!</p>
-        <p class="success-id" id="confirmationId"></p>
-        <a class="btn btn-gold btn-full" id="whatsappLink" href="#" target="_blank" rel="noopener">Confirmar por WhatsApp</a>
+        <figure class="filmstrip-frame filmstrip-frame--lg">
+          <img src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=700&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Campaign SS25</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--sm">
+          <img src="https://images.unsplash.com/photo-1509631179647-0177331693ae?w=420&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Editorial</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--md">
+          <img src="https://images.unsplash.com/photo-1469334031218-e382a71b716b?w=560&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Pasarela AW24</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--lg">
+          <img src="https://images.unsplash.com/photo-1490481651871-ab68de25d43d?w=700&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Campaña Lujo</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--sm">
+          <img src="https://images.unsplash.com/photo-1529139574466-a303027c1d8b?w=420&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Look Book SS24</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--md">
+          <img src="https://images.unsplash.com/photo-1524504388940-b1c1722653e1?w=560&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Campaña Digital</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--lg">
+          <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=700&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Editorial AW24</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--sm">
+          <img src="https://images.unsplash.com/photo-1488716820095-cbe80883c496?w=420&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Resort 2025</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--md">
+          <img src="https://images.unsplash.com/photo-1496440737103-cd596325d314?w=560&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Look Book AW24</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--lg">
+          <img src="https://images.unsplash.com/photo-1503185912284-5271ff81b9a8?w=700&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">SS25 Preview</figcaption>
+        </figure>
+
+        <figure class="filmstrip-frame filmstrip-frame--sm">
+          <img src="https://images.unsplash.com/photo-1485968579580-b6d095142e6e?w=420&q=75&auto=format&fit=crop" alt="" loading="lazy">
+          <figcaption class="filmstrip-frame__caption mono">Campaña Beauty</figcaption>
+        </figure>
+
       </div>
     </div>
   </section>
 
-  <!-- LEAGUES & EVENTS -->
-  <section class="events" id="eventos">
-    <div class="events-inner">
-      <h2 class="section-title"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="18" height="18"><path d="M6 9H4.5a2.5 2.5 0 0 1 0-5C7 4 7 7 7 7"/><path d="M18 9h1.5a2.5 2.5 0 0 0 0-5C17 4 17 7 17 7"/><path d="M4 22h16"/><path d="M10 22V8h4v14"/><path d="M5 9h14v4a8 8 0 0 1-14 0z"/></svg> LIGAS Y TORNEOS</h2>
-      <div class="events-list" id="eventsList">
-        <p class="events-empty">No hay eventos programados este mes.</p>
-      </div>
-    </div>
-  </section>
+  <!-- ═══════════════════════════════════════
+       FOOTER / CONTACT
+  ═══════════════════════════════════════ -->
+  <footer id="contact">
+    <div class="grid-8">
 
-  <!-- AD ZONE -->
-  <section class="ad-zone">
-    <!-- AD ZONE: replace with AdSense tag -->
-    <span>ESPACIO PUBLICITARIO DISPONIBLE · contacto@futgold.com</span>
-  </section>
+      <div class="footer-inner">
+        <p class="footer-wordmark reveal">Physical</p>
 
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="footer-stripe"></div>
-    <div class="footer-inner">
-      <div class="footer-brand">
-        <img src="public/logo.png" alt="FUTGOLD" height="36" class="footer-logo">
-        <p class="footer-tagline">La cancha te espera.</p>
+        <div class="footer-col reveal">
+          <p class="footer-col__label">Agencia</p>
+          <p>Agencia de Talentos</p>
+          <p>Ciudad de Panamá, Panamá</p>
+          <p>Est. 2020</p>
+        </div>
+
+        <div class="footer-col reveal">
+          <p class="footer-col__label">Contacto</p>
+          <a href="mailto:casting@physical.pa">casting@physical.pa</a>
+          <a href="tel:+50766000000">+507 6600-0000</a>
+          <p>Instagram: @physical.pa</p>
+        </div>
       </div>
-      <a href="https://wa.me/50762940094" class="footer-wa" target="_blank" rel="noopener">
-        <svg viewBox="0 0 24 24" fill="currentColor" width="18" height="18"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347z"/><path d="M12 0C5.373 0 0 5.373 0 12c0 2.625.846 5.059 2.284 7.034L.789 23.492a.5.5 0 0 0 .612.616l4.537-1.462A11.942 11.942 0 0 0 12 24c6.627 0 12-5.373 12-12S18.627 0 12 0zm0 22a9.94 9.94 0 0 1-5.348-1.558l-.373-.227-2.698.869.9-2.636-.249-.394A9.953 9.953 0 0 1 2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10z"/></svg>
-        6294-0094
-      </a>
+
+      <div class="footer-bottom reveal">
+        <p>PHYSICAL © 2025. Todos los derechos reservados.</p>
+        <p>
+          Tus datos personales son tratados de conformidad con la
+          Ley 81 de Protección de Datos Personales de la República de Panamá.
+        </p>
+      </div>
+
     </div>
-    <p class="footer-legal">Tus datos personales son tratados conforme a la Ley 81 de 26 de marzo de 2019 sobre Protección de Datos Personales de Panamá. Solo los usamos para gestionar tu reserva.</p>
-    <p class="footer-copy">FUTGOLD © 2025</p>
   </footer>
 
-  <script src="app.js"></script>
+  <!-- GSAP CDN -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+  <script>gsap.registerPlugin(ScrollTrigger);</script>
+
+  <!-- JS Modules -->
+  <script defer src="js/scroll-animations.js"></script>
+  <script defer src="js/hero.js"></script>
+  <script defer src="js/cursor.js"></script>
+  <script defer src="js/index-section.js"></script>
+  <script defer src="js/casting.js"></script>
+  <script defer src="js/archives.js"></script>
+
 </body>
 </html>
